@@ -22,22 +22,16 @@
 
 
 
-        <!-- <v-layout column class="fab-container"> -->
+        <!-- <v-layout column> -->
     <v-card>
       <!-- <v-toolbar extended> -->
         <!-- <v-toolbar-side-icon></v-toolbar-side-icon> -->
-        <v-btn
-          color="pink"
-          dark
-          small
-          absolute
-          bottom
-          right
-          fab
-          :to="{ name: 'edit', params: {} }"
-        >
-          <v-icon>add</v-icon>
-        </v-btn>
+
+
+
+
+
+
       <!-- </v-toolbar> -->
       <!-- <v-card-text style="height: 236px;" class="grey lighten-5"></v-card-text> -->
       <!-- <v-card-text style="height: 100px; position: relative"></v-card-text> -->
@@ -141,13 +135,6 @@ a {
 }
 v-data-table {
   /* overflow: scroll; */
-}
-
-.fab-container {
-  /* position: fixed; */
-  margin-top: 15px;
-  bottom: 0;
-  right: 0;
 }
 
 </style>
