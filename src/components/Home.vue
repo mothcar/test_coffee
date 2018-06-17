@@ -11,11 +11,10 @@
         class="elevation-3"
         >
         <template slot="items" slot-scope="props">
-          <td class="px-2"><a :href="props.item.url">{{ props.item.name }}</a></td>
+          <td class="px-2"><a :href="url(props.item.url_address)">{{ props.item.name }}</a></td>
           <td class="text-xs-right xs3">{{ props.item.price }}</td>
-          <td class="text-xs-right xs3">{{ props.item.price }}</td>
-          <td class="text-xs-right xs3">{{ props.item.price }}</td>
-          <td class="text-xs-right xs3">{{ props.item.price }}</td>
+          <td class="text-xs-right xs3">{{ props.item.quantity }}</td>
+          <td class="text-xs-right xs3">{{ props.item.phone }}</td>
         </template>
       </v-data-table>
 
@@ -85,9 +84,8 @@ export default {
           // width: '100%';
         },
         { text: '희망가격 (₩)', value: 'price' },
-        { text: 'Compared (%)', value: 'fat' },
-        { text: '수량', value: 'carbs' },
-        { text: 'Iron (%)', value: 'iron' }
+        { text: '수량', value: 'fat' },
+        { text: '변동량 (%)', value: 'iron' }
       ],
       coins: []
     }
@@ -99,7 +97,7 @@ export default {
     fetch('http://119.205.233.249:1337/getdata')
     .then(res => res.json())
     .then(res => {
-      console.log(res)
+      console.log(res[0])
       this.coins = res;
     })
 
@@ -109,8 +107,13 @@ export default {
     //   this.coins = res.data;
     // })
 
-  } // fn create
+  }, // fn create
 
+  methods: {
+    url: function(id){
+      return "http://" + id
+    }
+  } // method
 
 }
 

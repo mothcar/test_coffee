@@ -41,6 +41,8 @@
 import axios from 'axios'
 
 export default {
+  props: {
+  },
   data: () => ({
     valid: false,
     name: '',
@@ -63,7 +65,7 @@ export default {
         price: this.price,
         quantity: this.quantity,
         phone: this.phone,
-        url: this.url_address
+        url_address: this.url_address
 
       })
       .then(response => {

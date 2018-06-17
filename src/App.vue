@@ -40,14 +40,14 @@ app
 >
 <v-list>
 
-  <v-list-tile @click="rightDrawer = !rightDrawer" :to="{ name: 'home', params: {} }">
+  <v-list-tile @click="rightDrawer = !rightDrawer" :to="{ name: 'home', params: {} }" >
     <v-list-tile-action>
       <v-icon>home</v-icon>
     </v-list-tile-action>
     <v-list-tile-title>Home</v-list-tile-title>
   </v-list-tile>
 
-  <v-list-tile @click="rightDrawer = !rightDrawer" :to="{ name: 'login', params: {} }">
+  <v-list-tile @click="rightDrawer = !rightDrawer" :to="{ name: 'login', params: {} }" >
     <v-list-tile-action>
       <v-icon>perm_identity</v-icon>
     </v-list-tile-action>
@@ -59,6 +59,13 @@ app
       <v-icon>subject</v-icon>
     </v-list-tile-action>
     <v-list-tile-title>컬럼</v-list-tile-title>
+  </v-list-tile>
+
+  <v-list-tile @click="rightDrawer = !rightDrawer" :to="{ name: 'frame', params: {} }">
+    <v-list-tile-action>
+      <v-icon>pool</v-icon>
+    </v-list-tile-action>
+    <v-list-tile-title>test Frame</v-list-tile-title>
   </v-list-tile>
 
   <v-list-tile class="text-md-center" @click="rightDrawer = !rightDrawer">
@@ -79,7 +86,7 @@ app
   </div>
 </v-footer>
 <!-- FOOTER ************************************** -->
-<v-btn  class="fab-container"
+<v-btn class="fab-container"
   color="pink"
   dark
   small
@@ -113,6 +120,9 @@ a {
 
 <script>
 export default {
+  props: {
+  },
+
   data () {
     return {
       clipped: true,
@@ -128,6 +138,12 @@ export default {
       title: '38Coin Community'
     }
   },
-  name: 'App'
+
+  name: 'App',
+
+  methods: {
+    function(){
+    }
+  } // method
 }
 </script>

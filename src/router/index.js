@@ -4,10 +4,12 @@ import Home from '@/components/Home'
 import Edit from '@/components/Edit'
 import News from '@/components/News'
 import Login from '@/components/Login'
+import Frame from '@/components/Frame'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -25,6 +27,12 @@ export default new Router({
       path: '/news',
       name: 'news',
       component: News
+    },
+
+    {
+      path: '/frame',
+      name: 'frame',
+      component: Frame
     },
 
     {

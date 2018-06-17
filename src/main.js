@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
+import vue_frame from 'vue-frame'
+
 
 Vue.use(Vuetify)
 

@@ -2,6 +2,7 @@
   <v-container fluid grid-list-lg>
     <!-- <div class="container"> -->
     <h1>News</h1>
+<br />
     <!-- </div> -->
   </v-container>
 
@@ -21,4 +22,7 @@ export default {
 </script>
 
 <style>
+.fab-container {
+  /* position: fixed; */
+}
 </style>
