@@ -43,7 +43,7 @@ export default {
         content: this.content
       })
       .then(response => {
-        this.$router.push({ name: 'HelloWorld', query: { redirect: '/' } })
+        this.$router.push({ name: 'home', query: { redirect: '/' } })
       }
 
     )
