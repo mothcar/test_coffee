@@ -10,15 +10,16 @@
     <!-- <v-btn icon>
     <v-icon>menu</v-icon>
   </v-btn> -->
+  <v-btn icon @click.stop="rightDrawer = !rightDrawer">
+    <v-icon>menu</v-icon>
+  </v-btn>
   <router-link to="/">
     <v-toolbar-title v-text="title"></v-toolbar-title>
   </router-link>
 
   <v-spacer></v-spacer>
   <!-- <router-link to="/edit">Edit</router-link> -->
-  <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-    <v-icon>menu</v-icon>
-  </v-btn>
+
 
 </v-toolbar>
 <!-- TOOLBAR ********************************** -->
@@ -33,7 +34,7 @@
 <!-- RIGHT MENU ********************************** -->
 <v-navigation-drawer
 temporary
-:right="right"
+:left="left"
 v-model="rightDrawer"
 fixed
 app
@@ -131,7 +132,7 @@ export default {
         title: 'Inspire'
       }],
       miniVariant: false,
-      right: true,
+      left: true,
       rightDrawer: false,
       title: '38Coin Community'
     }

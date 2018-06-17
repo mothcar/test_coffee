@@ -11,7 +11,7 @@
         class="elevation-3"
         >
         <template slot="items" slot-scope="props">
-          <td class="px-2"><a :href="url(props.item.url_address)">{{ props.item.name }}</a></td>
+          <td class="px-2 xs3"><a :href="url(props.item.url_address)">{{ props.item.name }}</a></td>
           <td class="text-xs-right xs3">{{ props.item.price }}</td>
           <td class="text-xs-right xs3">{{ props.item.quantity }}</td>
           <td class="text-xs-right xs3">{{ props.item.phone }}</td>
@@ -78,14 +78,14 @@ export default {
       headers: [
         {
           text: 'Coin',
-          align: 'left',
+          align: 'center',
           sortable: true,
           value: 'name',
           // width: '100%';
         },
-        { text: '희망가격 (₩)', value: 'price' },
-        { text: '수량', value: 'fat' },
-        { text: '변동량 (%)', value: 'iron' }
+        { text: '희망가격 (₩)', align: 'right', value: 'price' },
+        { text: '수량', align: 'right', value: 'fat' },
+        { text: '변동량 (%)', align: 'right', value: 'iron' }
       ],
       coins: []
     }

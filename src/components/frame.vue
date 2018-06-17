@@ -2,7 +2,7 @@
   <div id="container">
 
 
-    <iframe id="myframe" :src="this.url" frameborder="0" ref="frame" @load="load"></iframe>
+    <iframe id="myframe" :src="this.url3" frameborder="0" ref="frame" @load="load"></iframe>
 
 
   </div>
@@ -15,7 +15,8 @@ export default {
   data () {
     return {
       url: "http://mothcar.blogspot.com/2017/06/blog-post.html",
-      url2: "https://blog.naver.com/mothcar/221082122469"
+      url2: "https://blog.naver.com/mothcar/221082122469",
+      url3: "http://www.bitweb.co.kr/news/view.php?idx=1182"
     }
   }, // data
 
@@ -32,7 +33,7 @@ export default {
 <style>
 iframe {
   position: fixed;
-  top: 10vh;
+  /* top: 10vh; */
   width: 100vw;
   height: 90vh;
 }
