@@ -80,10 +80,8 @@ app
 <!-- RIGHT MENU ********************************** -->
 
 <!-- FOOTER ************************************** -->
-<v-footer :fixed="fixed" app>
-  <div class="container">
-    <span>&copy; 2017</span>
-  </div>
+<v-footer class="px-2" app>
+    <span>&copy; 2018 copyright umanji</span>
 </v-footer>
 <!-- FOOTER ************************************** -->
 <v-btn class="fab-container"
