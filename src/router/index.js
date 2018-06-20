@@ -5,12 +5,21 @@ import Edit from '@/components/Edit'
 import News from '@/components/News'
 import Login from '@/components/Login'
 import Frame from '@/components/Frame'
+import Admin from '@/components/Adminlogin'
+import CreatePost from '@/components/CreatePost'
 
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   routes: [
+
+    {
+      path: '/admin',
+      name: 'admin',
+      component: Admin
+    },
+
     {
       path: '/',
       name: 'home',
@@ -40,6 +49,13 @@ export default new Router({
       name: 'login',
       component: Login
     },
+
+    {
+      path: '/createpost',
+      name: 'createpost',
+      component: CreatePost
+    },
+
 
   ]
 })

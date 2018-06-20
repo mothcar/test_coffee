@@ -38,7 +38,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 
 export default {
   props: {
@@ -52,9 +51,8 @@ export default {
     url_address: '',
     nameRules: [
       v => !!v || 'Name is required',
-      v => v.length <= 10 || 'Name must be less than 10 characters'
-    ],
-    content: ''
+      v => v.length <= 20 || 'Name must be less than 10 characters'
+    ]
   }),
 
   methods: {

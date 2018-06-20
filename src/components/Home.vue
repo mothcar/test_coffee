@@ -1,52 +1,65 @@
 <template>
   <v-container fluid grid-list-lg>
-  <!-- <v-flex xs12 sm12 md12> -->
+    <!-- <v-flex xs12 sm12 md12> -->
     <!-- <v-slide-y-transition mode="out-in"> -->
-      <!-- <v-layout fluid> -->
-      <!-- <div class="container"> -->
-        <v-data-table
-        :headers="headers"
-        :items="coins"
-        hide-actions
-        class="elevation-3"
-        >
-        <template slot="items" slot-scope="props">
-          <td class="px-2 xs3"><a :href="url(props.item.url_address)">{{ props.item.name }}</a></td>
-          <td class="text-xs-right xs3">{{ props.item.price }}</td>
-          <td class="text-xs-right xs3">{{ props.item.quantity }}</td>
-          <td class="text-xs-right xs3">{{ props.item.phone }}</td>
-        </template>
-      </v-data-table>
+    <!-- <v-layout fluid> -->
+    <!-- <div class="container"> -->
+    <v-data-table
+    :headers="headers"
+    :items="coins"
+    hide-actions
+    class="elevation-3"
+    >
+    <template slot="items" slot-scope="props">
+      <td class="px-2 xs3"><a :href="url(props.item.url_address)">{{ props.item.name }}</a></td>
+      <td class="text-xs-right xs3">{{ props.item.price }}</td>
+      <td class="text-xs-right xs3">{{ props.item.quantity }}</td>
+      <td class="text-xs-right xs3">{{ props.item.phone }}</td>
+    </template>
+  </v-data-table>
 
 
 
 
-        <!-- <v-layout column> -->
-    <v-card>
-      <!-- <v-toolbar extended> -->
-        <!-- <v-toolbar-side-icon></v-toolbar-side-icon> -->
+  <!-- <v-layout column> -->
+  <v-card>
+    <!-- <v-toolbar extended> -->
+    <!-- <v-toolbar-side-icon></v-toolbar-side-icon> -->
 
 
 
 
 
 
-      <!-- </v-toolbar> -->
-      <!-- <v-card-text style="height: 236px;" class="grey lighten-5"></v-card-text> -->
-      <!-- <v-card-text style="height: 100px; position: relative"></v-card-text> -->
-    </v-card>
+    <!-- </v-toolbar> -->
+    <!-- <v-card-text style="height: 236px;" class="grey lighten-5"></v-card-text> -->
+    <!-- <v-card-text style="height: 100px; position: relative"></v-card-text> -->
+  </v-card>
   <!-- </v-layout> -->
   <!-- </v-flex> -->
 
 
 
 
-      <!-- </div> -->
+  <!-- </div> -->
 
 
-    <!-- </v-layout> -->
+  <!-- </v-layout> -->
   <!-- </v-slide-y-transition> -->
+  <v-btn class="fab-container"
+  color="pink"
+  dark
+  small
+  fixed
+  bottom
+  right
+  fab
+  :to="{ name: 'edit', params: {} }"
+  >
+  <v-icon>add</v-icon>
+</v-btn>
 </v-container>
+
 </template>
 
 <script>
@@ -138,6 +151,14 @@ a {
 }
 v-data-table {
   /* overflow: scroll; */
+}
+
+.fab-container {
+  /* position: fixed; */
+  margin-bottom: 40px;
+  margin-right: 7px;
+  bottom: 0;
+  right: 0;
 }
 
 </style>

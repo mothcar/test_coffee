@@ -85,7 +85,7 @@ app
     <span>&copy; 2018 copyright umanji</span>
 </v-footer>
 <!-- FOOTER ************************************** -->
-<v-btn class="fab-container"
+<!-- <v-btn class="fab-container"
   color="pink"
   dark
   small
@@ -96,7 +96,7 @@ app
   :to="{ name: 'edit', params: {} }"
   >
     <v-icon>add</v-icon>
-</v-btn>
+</v-btn> -->
 
 </v-app>
 </template>
