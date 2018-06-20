@@ -21,6 +21,11 @@
       label="Photo"
       ></v-text-field>
 
+      <v-text-field
+      v-model="link"
+      label="Link Address"
+      ></v-text-field>
+
 
       <button type="submit" class="btn btn-default" v-on:click.prevent="post_news">Add News</button>
     </v-form>
@@ -39,7 +44,8 @@ export default {
     valid: false,
     title: '',
     content: '',
-    photo: ''
+    photo: '',
+    link: ''
   }),
 
   methods: {
@@ -48,7 +54,8 @@ export default {
       axios.post('http://119.205.233.249:1337/postnews', {
         title: this.title,
         content: this.content,
-        photo: this.photo
+        photo: this.photo,
+        link: this.link
 
       })
       .then(response => {

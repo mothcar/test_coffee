@@ -3,13 +3,14 @@
 
     <v-layout>
     <v-flex xs12 sm6 offset-sm3>
+
+      <!--
       <v-card >
         <v-card-media src="https://cdn.shopify.com/s/files/1/1217/3064/products/CL022-Sunset_Dock_Final_1024x1024.jpg?v=1474406979" height="200px">
         </v-card-media>
         <v-card-title primary-title>
           <div>
             <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
-            <!-- <div>Located two hours south of Sydney in the <br>Southern Highlands of New South Wales, ...</div> -->
             <v-card-text> {{ card_text}} </v-card-text>
           </div>
         </v-card-title>
@@ -26,7 +27,6 @@
         <v-card-title primary-title>
           <div>
             <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
-            <!-- <div>Located two hours south of Sydney in the <br>Southern Highlands of New South Wales, ...</div> -->
             <div> {{ card_text}} </div>
           </div>
         </v-card-title>
@@ -35,6 +35,27 @@
           <v-btn flat color="orange">Explore</v-btn>
         </v-card-actions>
       </v-card>
+      -->
+
+      <div v-for="(value, key) in news">
+        <v-card>
+          <v-card-media :src="value.photo" height="200px">
+          </v-card-media>
+          <v-card-title primary-title>
+            <div>
+              <h3 class="headline mb-0">{{ value.title }}</h3>
+              <div> {{ value.content }} </div>
+              <h6 class="headline mb-0">{{ value.createdAt }}</h6>
+            </div>
+          </v-card-title>
+          <v-card-actions>
+            <v-btn flat color="orange">Share</v-btn>
+            <v-btn flat color="orange">Explore</v-btn>
+          </v-card-actions>
+        </v-card>
+        {{ value.photo }}
+        <br />
+      </div>
 
     </v-flex>
   </v-layout>
@@ -66,12 +87,31 @@ import axios from 'axios'
 export default {
 
   data: () => ({
+    news: [],
       card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.'
-  }),
+  }),  // data
+  created:function() {
+
+    fetch('http://119.205.233.249:1337/getnews')
+    .then(res => res.json())
+    .then(res => {
+      console.log(res[0])
+      this.news = res;
+    })
+
+    // axios.get('http://119.205.233.249:1337/getdata')
+    // .then(res => {
+    //   console.log(res.data)
+    //   this.coins = res.data;
+    // })
+
+  }, // fn create
 
   methods: {
-
-  }
+    url: function(id){
+      return "http://" + id
+    }
+  } // method
 }
 </script>
 
