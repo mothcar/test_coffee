@@ -19,6 +19,7 @@
 
   <v-spacer></v-spacer>
   <!-- <router-link to="/edit">Edit</router-link> -->
+  <router-link to="/news">코인뉴스</router-link>
 
 
 </v-toolbar>
@@ -59,7 +60,7 @@ app
     <v-list-tile-action>
       <v-icon>subject</v-icon>
     </v-list-tile-action>
-    <v-list-tile-title>컬럼</v-list-tile-title>
+    <v-list-tile-title>코인뉴스</v-list-tile-title>
   </v-list-tile>
 
   <v-list-tile @click="rightDrawer = !rightDrawer" :to="{ name: 'frame', params: {} }">

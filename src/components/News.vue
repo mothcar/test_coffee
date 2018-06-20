@@ -38,6 +38,7 @@
       -->
 
       <div v-for="(value, key) in news">
+        <a :href="value.link" target="_blank">
         <v-card>
           <v-card-media :src="value.photo" height="200px">
           </v-card-media>
@@ -45,15 +46,17 @@
             <div>
               <h3 class="headline mb-0">{{ value.title }}</h3>
               <div> {{ value.content }} </div>
-              <h6 class="headline mb-0">{{ value.createdAt }}</h6>
+              <!-- <h6 class="headline mb-0">{{ value.createdAt }}</h6> -->
+              <!-- <h5 class=" mb-0">{{ value.createdAt  | moment("dddd, MMMM Do YYYY") }}</h5> -->
+              <h5 class="text-xs-right text-sm-right text-lg-right">{{ value.createdAt  | moment("YYYY MMMM Do ") }}</h5>
             </div>
           </v-card-title>
-          <v-card-actions>
+          <!-- <v-card-actions>
             <v-btn flat color="orange">Share</v-btn>
             <v-btn flat color="orange">Explore</v-btn>
-          </v-card-actions>
+          </v-card-actions> -->
         </v-card>
-        {{ value.photo }}
+      </a>
         <br />
       </div>
 
@@ -82,14 +85,22 @@
 </template>
 
 <script>
-import axios from 'axios'
 
 export default {
 
+  template: '<div> {{ mytime1 }} </div>',
+
   data: () => ({
     news: [],
-      card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.'
+    mytime: '',
+    card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.'
   }),  // data
+  computed: {
+        mytime1: function() {
+            return 'paultime ' + moment().format('YYYY [escaped] YYYY')
+        }
+    }, //computed
+
   created:function() {
 
     fetch('http://119.205.233.249:1337/getnews')
@@ -110,12 +121,24 @@ export default {
   methods: {
     url: function(id){
       return "http://" + id
+    },
+
+    mytime: function() {
+
+      return moment().format('YYYY [escaped] YYYY')
     }
   } // method
+
+
 }
 </script>
 
 <style>
+a {
+  text-decoration: none;
+  color: #42b983;
+}
+
 .fab-container {
   /* position: fixed; */
 }

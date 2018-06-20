@@ -8,6 +8,8 @@ import 'vuetify/dist/vuetify.min.css'
 import vue_frame from 'vue-frame'
 
 
+Vue.use(require('vue-moment'))
+
 Vue.use(Vuetify, {
   theme: {
     primary: '#1976D2',
