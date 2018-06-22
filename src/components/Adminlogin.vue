@@ -47,8 +47,6 @@ export default {
           if(response.data.permission === "ok") return this.$router.push({ name: 'createpost', query: { redirect: '/createpost' } })
           return this.$refs.form.reset()
         })
-
-
       } //permissoin
     } // methods
   }
